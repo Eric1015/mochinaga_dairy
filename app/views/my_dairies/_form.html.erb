@@ -1,0 +1,32 @@
+<%= form_with(model: my_dairy, local: true) do |form| %>
+  <% if my_dairy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(my_dairy.errors.count, "error") %> prohibited this my_dairy from being saved:</h2>
+
+      <ul>
+        <% my_dairy.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <%= form.label "朝食はなんですか？" %>
+  <%= form.text_area :question1 %>
+</div>
+
+<div class="field">
+<%= form.label "昼食はなんですか？" %>
+<%= form.text_area :question2 %>
+</div>
+
+  <div class="field">
+    <%= form.label "夕食はなんですか？" %>
+    <%= form.text_area :question3 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

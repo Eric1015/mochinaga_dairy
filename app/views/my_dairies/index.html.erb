@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Dairies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_dairies.each do |my_dairy| %>
+      <tr>
+        <td><%= my_dairy.content %></td>
+        <td><%= link_to 'Show', my_dairy %></td>
+        <td><%= link_to 'Edit', edit_my_dairy_path(my_dairy) %></td>
+        <td><%= link_to 'Destroy', my_dairy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New My Dairy', new_my_dairy_path %>
